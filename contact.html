@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("bgimg1.jpg");
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#London {background-color:#000000;}
+#Paris {background-color:#000000;}
+#Tokyo {background-color:#000000;}
+#Oslo {background-color:#000000;}
+#contact {
+	width: 430px; margin: 60px auto; padding: 60px 30px;
+	background: #28282D; border: 1px solid #e1e1e1;
+	-moz-box-shadow: 0px 0px 8px #444;
+	-webkit-box-shadow: 0px 0px 8px #444;
+}
+
+h1 {
+	font-size: 35px; color: #445668; text-transform: uppercase;
+	text-align: center; margin: 0 0 35px 0; text-shadow: 0px 1px 0px #f2f2f2;
+}
+
+label {
+	float: left; clear: left; margin: 11px 20px 0 0; width: 95px;
+	text-align: right; font-size: 16px; color: #445668;
+	text-transform: uppercase; text-shadow: 0px 1px 0px #f2f2f2;
+}
+
+input {
+	width: 260px; height: 35px; padding: 5px 20px 0px 20px; margin: 0 0 20px 0;
+	background: #28282D;
+	background: -moz-linear-gradient(top, #28282D 0%,#28282D 20%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28282D), color-stop(20%,#28282D)); /* webkit */
+	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+	-moz-box-shadow: 0px 1px 0px #f2f2f2;-webkit-box-shadow: 0px 1px 0px #f2f2f2;
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0px -1px 0px #334f71;
+}
+	input::-webkit-input-placeholder  {
+    	color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
+	}
+	input:-moz-placeholder {
+	    color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
+	}
+
+textarea {
+	width: 260px; height: 170px; padding: 12px 20px 0px 20px; margin: 0 0 20px 0;
+	background: #5E768D;
+	background: -moz-linear-gradient(top, #546A7F 0%, #5E768D 20%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28282D), color-stop(20%,#28282D)); /* webkit */
+	border-radius: 5px; -moz-border-radius: 5px; -webkit-border-radius: 5px;
+	-moz-box-shadow: 0px 1px 0px #f2f2f2;-webkit-box-shadow: 0px 1px 0px #f2f2f2;
+	font-family: sans-serif; font-size: 16px; color: #f2f2f2; text-transform: uppercase; text-shadow: 0px -1px 0px #334f71;
+}
+	textarea::-webkit-input-placeholder  {
+    	color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
+	}
+	textarea:-moz-placeholder {
+	    color: #a1b2c3; text-shadow: 0px -1px 0px #38506b;
+	}
+
+input:focus, textarea:focus {
+	background: #28282D;
+	background: -moz-linear-gradient(top, #28282D 0%, #28282D 20%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#28282D), color-stop(20%,#28282D)); /* webkit */
+}
+
+input[type=submit] {
+	width: 185px; height: 52px; float: right; padding: 10px 15px; margin: 0 15px 0 0;
+	-moz-box-shadow: 0px 0px 5px #999;-webkit-box-shadow: 0px 0px 5px #999;
+	border: 1px solid #556f8c;
+	background: -moz-linear-gradient(top, #718DA9 0%, #415D79 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#718DA9), color-stop(100%,#415D79)); /* webkit */
+	cursor: pointer;
+}
+</style>
+</head>
+<body>
+
+<div id="London" class="tabcontent">
+  <h3>Home</h3>
+  <p>Home is best place to live.</p>
+</div>
+
+<div id="Paris" class="tabcontent">
+  <h3>About</h3>
+  <p>We are a community who are a big giant in it sector.</p>
+</div>
+
+<div id="Tokyo" class="tabcontent">
+  <h3>Services</h3>
+  <p>Data Science.</p>
+</div>
+
+<div id="Oslo" class="tabcontent">
+  <h3>Contact Us</h3>
+  <p>We will contact you soon.</p>
+</div>
+
+<button class="tablink" onclick="openCity('London', this, '#000000')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openCity('Paris', this, '#000000')">About</button>
+<button class="tablink" onclick="openCity('Tokyo', this, '#000000')">Services</button>
+<button class="tablink" onclick="openCity('Oslo', this, '#000000')">Contact Us</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<div id="contact">
+	<h1>Send an email</h1>
+	<form action="#" method="post">
+		<fieldset>
+			<label for="name">Name:</label>
+			<input type="text" id="name" placeholder="Enter your full name" />
+
+			<label for="email">Email:</label>
+			<input type="email" id="email" placeholder="Enter your email address" />
+
+			<label for="message">Message:</label>
+			<textarea id="message" placeholder="What's on your mind?"></textarea>
+
+			<input type="submit" value="Send message" />
+
+		</fieldset>
+	</form>
+</div>
+
+<footer style="position: fixed;
+    left: 0;
+    bottom: 0;
+    box-shadow: 5px 4px 3px;
+    height: 100px;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    text-align: center;">
+    <p>&copy; dileepsagar</p>
+</footer>
+</body>
+</html>

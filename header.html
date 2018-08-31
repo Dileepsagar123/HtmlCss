@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+  background-image: url("bgimg1.jpg");
+}
+
+.tablink {
+    background-color: #555;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 25%;
+}
+
+.tablink:hover {
+    background-color: #777;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 50px;
+    text-align: center;
+}
+
+#Home {background-color:#000000;}
+#About {background-color:#000000;}
+#Service {background-color:#000000;}
+#Contact {background-color:#000000;}
+input[type=text] {
+    width: 130px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+.mb-60 {
+    margin-bottom: 60px;
+}
+.services-inner {
+    border: 2px solid #48c7ec;
+    margin-left: 35px;
+    transition: .3s;
+}
+.our-services-img {
+    float: left;
+    margin-left: -36px;
+    margin-right: 22px;
+    margin-top: 28px;
+}
+.our-services-text {
+    padding-right: 10px;
+}
+.our-services-text {
+    overflow: hidden;
+    padding: 28px 0 25px;
+}
+.our-services-text h4 {
+    color: #222222;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    padding-bottom: 10px;
+    position: relative;
+    text-transform: uppercase;
+}
+.our-services-text h4::before {
+    background: #ec6d48 none repeat scroll 0 0;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    position: absolute;
+    width: 35px;
+}
+.our-services-wrapper:hover .services-inner {
+    background: #fff none repeat scroll 0 0;
+    border: 2px solid transparent;
+    box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+}
+.our-services-text p {
+    margin-bottom: 0;
+}
+p {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 26px;
+    color: #666;
+    margin-bottom: 15px;
+}
+</style>
+</head>
+<body>
+
+<div id="Home" class="tabcontent">
+  <h3>Home</h3>
+
+  <p>Home is best place to live.</p>
+</div>
+
+<div id="About" class="tabcontent">
+  <h3>About</h3>
+
+  <p>We are a community who are a big giant in it sector.</p>
+</div>
+
+<div id="Service" class="tabcontent">
+  <h3>Services</h3>
+
+  <p>Data Science.</p>
+</div>
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact Us</h3>
+  <p>We will contact you soon.</p>
+</div>
+
+<button class="tablink" onclick="openCity('Home', this, '#000000')" id="defaultOpen">Home</button>
+<button class="tablink" onclick="openCity('About', this, '#000000')">About</button>
+<button class="tablink" onclick="openCity('Service', this, '#000000')">Services</button>
+<button class="tablink" onclick="openCity('Contact', this, '#000000')">Contact Us</button>
+
+<script>
+function openCity(cityName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(cityName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+<div class="container">
+    <h2>OUR SERVICES</h2>
+	<div class="row">
+		<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+						<div class="our-services-wrapper mb-60">
+							<div class="services-inner">
+								<div class="our-services-img">
+								<img src="https://www.orioninfosolutions.com/assets/img/icon/Agricultural-activities.png" width="68px" alt="">
+								</div>
+								<div class="our-services-text">
+									<h4>business growth</h4>
+									<p>Proin varius pellentesque nuncia tincidunt ante. In id lacus</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
+						<div class="our-services-wrapper mb-60">
+							<div class="services-inner">
+								<div class="our-services-img">
+								<img src="https://www.orioninfosolutions.com/assets/img/icon/Agricultural-activities.png" width="68px" alt="">
+								</div>
+								<div class="our-services-text">
+									<h4>Career growth</h4>
+									<p></p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+	</div>
+</div>
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+<br />
+
+<br />
+<footer style="position: fixed;
+    left: 0;
+    bottom: 0;
+    box-shadow: 5px 4px 3px;
+    height: 200px;
+    width: 100%;
+    background-color: #000000;
+    color: white;
+    text-align: center;">
+    <p>&copy; dileepsagar</p>
+</footer>
+</body>
+</html>
